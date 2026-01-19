@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="pc_computer_view_tree" model="ir.ui.view">
+        <field name="name">pc.computer.tree</field>
+        <field name="model">pc.computer</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="name"/>
+                <field name="user_id"/>
+                <field name="total_price"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="pc_computer_view_form" model="ir.ui.view">
+        <field name="name">pc.computer.form</field>
+        <field name="model">pc.computer</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="user_id"/>
+                        <field name="last_update"/>
+                        <field name="component_ids" widget="many2many_tags"/>
+                        <field name="total_price" readonly="1"/>
+                        <field name="notes"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="pc_computer_action" model="ir.actions.act_window">
+        <field name="name">Ordenadores</field>
+        <field name="res_model">pc.computer</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <menuitem id="pc_menu_root" name="Gestión PCs">
+        <menuitem id="pc_menu_computers"
+                  name="Ordenadores"
+                  action="pc_computer_action"/>
+        <menuitem id="pc_menu_components"
+                  name="Componentes"
+                  action="pc_component_action"/>
+    </menuitem>
+
+</odoo>

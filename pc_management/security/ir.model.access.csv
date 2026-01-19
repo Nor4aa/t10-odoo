@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_pc_component,pc.component,model_pc_component,,1,1,1,1
+access_pc_computer,pc.computer,model_pc_computer,,1,1,1,1
